@@ -2,16 +2,16 @@
 class PodHelper < Formula
   desc "Kubernetes Pod Helper Util"
   homepage "https://github.com/dhenkel92/pod-helper"
-  version "0.1.4"
+  version "0.1.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.4/pod-helper_0.1.4_Darwin_x86_64.tar.gz"
-    sha256 "0ed5300bd3dba3902ddbaf20c7eb1495b7ed5c918ef1512d196ba89c18e3d729"
+    url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.5/pod-helper_0.1.5_Darwin_x86_64.tar.gz"
+    sha256 "5f47f103fcca7d8c54452436f1004e72bb97ea5b589199ade007a67b3f2dbeef"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.4/pod-helper_0.1.4_Linux_x86_64.tar.gz"
-      sha256 "25e4e8cb4bf5c85622cb79c427548a7886682e62eb26e22ae18da2e14a02c757"
+      url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.5/pod-helper_0.1.5_Linux_x86_64.tar.gz"
+      sha256 "ad976feb1620ac5197ec187e7d6e297898a269fed48287bff97e2fc0899ed5d3"
     end
   end
 
