@@ -2,21 +2,22 @@
 class PodHelper < Formula
   desc "Kubernetes Pod Helper Util"
   homepage "https://github.com/dhenkel92/pod-helper"
-  version "0.1.6"
+  version "0.1.7"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.6/pod-helper_0.1.6_Darwin_x86_64.tar.gz"
-    sha256 "574e7e19cf8f0b824c4813135fcb2aa55d8a8930c2ca037d2a5f3ca6286435c9"
+    url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.7/pod-helper_0.1.7_Darwin_x86_64.tar.gz"
+    sha256 "84569eb0e9339e6fe183d568753770f50f416a8a2b5bd7db52736a37952d0289"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.6/pod-helper_0.1.6_Linux_x86_64.tar.gz"
-      sha256 "de132756e29377f5fd2c7cef1407824ba1ffc5be0085b1c0dd7ed8f15efe71a3"
+      url "https://github.com/dhenkel92/pod-helper/releases/download/v0.1.7/pod-helper_0.1.7_Linux_x86_64.tar.gz"
+      sha256 "829a0194946d37e3ee1d000bf5228a229113baf83d3fa93e21df2d0a7f97582b"
     end
   end
 
   def install
     bin.install "pod-helper"
+    bin.install "kubectl-dsh"
   end
 
   test do
