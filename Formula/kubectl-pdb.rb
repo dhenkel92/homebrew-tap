@@ -5,22 +5,22 @@
 class KubectlPdb < Formula
   desc ""
   homepage "https://github.com/dhenkel92/kubectl-pdb"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
   depends_on :macos
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.2/kubectl-pdb_Darwin_arm64.tar.gz"
-      sha256 "2eb0445f5178a578ee13408f69e5517d2df51c9c2519ab34449d5a5b3841f704"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.3/kubectl-pdb_Darwin_arm64.tar.gz"
+      sha256 "84c598de75995a800a0563e6c4005aad8bc10dc89dd0c454b87b2f23b4cb169b"
 
       def install
         bin.install "kubectl-pdb"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.2/kubectl-pdb_Darwin_x86_64.tar.gz"
-      sha256 "06b5e23676ad27f4d0de6f28a133f42e9844ba5a57ee93b02be613c218611793"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.3/kubectl-pdb_Darwin_x86_64.tar.gz"
+      sha256 "25003659227c75173d867577997f11419446054a285cce136f54c45ebbd96118"
 
       def install
         bin.install "kubectl-pdb"
