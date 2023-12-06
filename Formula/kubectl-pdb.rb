@@ -5,21 +5,21 @@
 class KubectlPdb < Formula
   desc ""
   homepage "https://github.com/dhenkel92/kubectl-pdb"
-  version "0.0.6"
+  version "0.0.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-pdb_Darwin_arm64.tar.gz"
-      sha256 "c126a764889554dad3b55e8cd1a1d0d2045a56edc475eb89ba94e8b00dec6334"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.7/kubectl-pdb_Darwin_arm64.tar.gz"
+      sha256 "6bae107a1f2ea027375fd05659b04da8059e7dd89e02805119aab3e86a3c49f9"
 
       def install
         bin.install "kubectl-pdb"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-pdb_Darwin_x86_64.tar.gz"
-      sha256 "8b20ff44803b597fc9f531814a977ba939b7434f9f9de03cbe5a8a01be61357a"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.7/kubectl-pdb_Darwin_x86_64.tar.gz"
+      sha256 "75e13472a07df1455102b89ae9267674f3cfc1164ac076b977dbc58e2484b48d"
 
       def install
         bin.install "kubectl-pdb"
@@ -29,24 +29,24 @@ class KubectlPdb < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-pdb_Linux_armv6.tar.gz"
-      sha256 "c74f2ecbe91bc2f42a69ec34ade0047b3d2a888bc49b18fdf97b24915104e4b5"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.7/kubectl-pdb_Linux_armv6.tar.gz"
+      sha256 "1906da69568e11f2568429fe0c8327eb0ee3c38cac9912e60851a5c78354a6e0"
 
       def install
         bin.install "kubectl-pdb"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-pdb_Linux_arm64.tar.gz"
-      sha256 "a503e62d5b1e845cc2524e49c63e9b44a3464014a4966311d16f64ab68092991"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.7/kubectl-pdb_Linux_arm64.tar.gz"
+      sha256 "201c9e4aac88b9ff1be9fc9c4ed4a054f6d4657688622943e3080953e793fce7"
 
       def install
         bin.install "kubectl-pdb"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-pdb_Linux_x86_64.tar.gz"
-      sha256 "1a6b1411c545a53cdc42a95bcf7d528d0622c1d727787096babc5aae5a9590f5"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.7/kubectl-pdb_Linux_x86_64.tar.gz"
+      sha256 "eb8632c8aca69030fb205a013f7679e09676b84de165d70b01e6f052cf0833c8"
 
       def install
         bin.install "kubectl-pdb"
