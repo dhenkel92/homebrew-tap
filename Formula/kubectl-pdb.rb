@@ -5,22 +5,48 @@
 class KubectlPdb < Formula
   desc ""
   homepage "https://github.com/dhenkel92/kubectl-pdb"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
-  depends_on :macos
 
   on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.4/kubectl-pdb_Darwin_x86_64.tar.gz"
+      sha256 "1e6747bc5c840d18891d99f2d8e2ada45b2e1677df1ac2cd4ff0030b49b0dcfa"
+
+      def install
+        bin.install "kubectl-pdb"
+      end
+    end
     if Hardware::CPU.arm?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.3/kubectl-pdb_Darwin_arm64.tar.gz"
-      sha256 "84c598de75995a800a0563e6c4005aad8bc10dc89dd0c454b87b2f23b4cb169b"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.4/kubectl-pdb_Darwin_arm64.tar.gz"
+      sha256 "9373a3cd2c0fd31439f6ea6fd7fd890df1d2c1061d524455a2ef813a35933376"
+
+      def install
+        bin.install "kubectl-pdb"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.4/kubectl-pdb_Linux_armv6.tar.gz"
+      sha256 "adfe34779c0d6cd57e471dfa3926e2d75571a622d7ad1d11d9eba667b601142a"
+
+      def install
+        bin.install "kubectl-pdb"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.4/kubectl-pdb_Linux_arm64.tar.gz"
+      sha256 "dc203c0c72f87ad06bb635432b90c832589624b45d3b883c5917f4485ebda9f2"
 
       def install
         bin.install "kubectl-pdb"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.3/kubectl-pdb_Darwin_x86_64.tar.gz"
-      sha256 "25003659227c75173d867577997f11419446054a285cce136f54c45ebbd96118"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.4/kubectl-pdb_Linux_x86_64.tar.gz"
+      sha256 "9ac4d10a6a4d5bf8005c188b362143de64d48bd5395ea88d241ce7abb69f12e4"
 
       def install
         bin.install "kubectl-pdb"
