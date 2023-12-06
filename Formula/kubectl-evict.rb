@@ -5,21 +5,21 @@
 class KubectlEvict < Formula
   desc ""
   homepage "https://github.com/dhenkel92/kubectl-pdb"
-  version "0.0.5"
+  version "0.0.6"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.5/kubectl-evict_Darwin_x86_64.tar.gz"
-      sha256 "b494c05371a105104d2ca96e924c81c6acec56563c3b33b79f6595ac67df1a74"
+    if Hardware::CPU.arm?
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-evict_Darwin_arm64.tar.gz"
+      sha256 "ab95922a15c068a8e9923efac6111cb9613d67a2ac9764caf91d22533db46128"
 
       def install
         bin.install "kubectl-evict"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.5/kubectl-evict_Darwin_arm64.tar.gz"
-      sha256 "f2685dfae9f6951a372a5f773e2607e60a68bc29ea734ee44b5ac3df27f020e1"
+    if Hardware::CPU.intel?
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-evict_Darwin_x86_64.tar.gz"
+      sha256 "778a8ccf4bc887cb75c67dab9bfc7231d743b65946623e4745919252b02af9c2"
 
       def install
         bin.install "kubectl-evict"
@@ -29,24 +29,24 @@ class KubectlEvict < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.5/kubectl-evict_Linux_armv6.tar.gz"
-      sha256 "dbcdd560b5d42a3ef372fe1e74e49fe97d92baa86847b6576646bd2c3a0665d5"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-evict_Linux_armv6.tar.gz"
+      sha256 "759577f4bf3e8eb9c05505164582ff2069db5d051582fbc29c98fc51880c500e"
 
       def install
         bin.install "kubectl-evict"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.5/kubectl-evict_Linux_x86_64.tar.gz"
-      sha256 "33087bb3284eedd83101fb0eb3867da91ea878c203c7d1f9629748a48742902c"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-evict_Linux_x86_64.tar.gz"
+      sha256 "92a0493cbdda83a5fd97e7b5f8a3f818c9ccc360d0ab3f733fa674b69a7bed73"
 
       def install
         bin.install "kubectl-evict"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.5/kubectl-evict_Linux_arm64.tar.gz"
-      sha256 "8d6745f68c748d93dcbe78a9c7d5ca92e79940c3fe253f4805737db3a50006be"
+      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.0.6/kubectl-evict_Linux_arm64.tar.gz"
+      sha256 "4c2d2f958c185d3bb017a2546213d58d1d64f696f3bd48931e3f5b61ff1adf1a"
 
       def install
         bin.install "kubectl-evict"
