@@ -5,21 +5,21 @@
 class KubectlDebugPdb < Formula
   desc ""
   homepage "https://github.com/dhenkel92/kubectl-debug-pdb"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.1.1/kubectl-debug-pdb_Darwin_arm64.tar.gz"
-      sha256 "dc295bd723b56c331a5392a5ff87e1a62f7e0b84a8cea6d0c137a2030b75d81a"
+    if Hardware::CPU.intel?
+      url "https://github.com/dhenkel92/kubectl-debug-pdb/releases/download/v0.1.2/kubectl-debug-pdb_Darwin_x86_64.tar.gz"
+      sha256 "1daed7deb983c3c0d5c639985ff799807fad97fdd6156320ecd4a4d3195e7936"
 
       def install
         bin.install "kubectl-debug_pdb"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.1.1/kubectl-debug-pdb_Darwin_x86_64.tar.gz"
-      sha256 "47b8d939012c55ad94048e1b3b01723ff9590ad614c3316cd694d1c2e66cb32c"
+    if Hardware::CPU.arm?
+      url "https://github.com/dhenkel92/kubectl-debug-pdb/releases/download/v0.1.2/kubectl-debug-pdb_Darwin_arm64.tar.gz"
+      sha256 "0e8d67624cbdd906e4854d9ec90317afbffe1d539bb76a37a502b0a87032dbb5"
 
       def install
         bin.install "kubectl-debug_pdb"
@@ -28,25 +28,25 @@ class KubectlDebugPdb < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.1.1/kubectl-debug-pdb_Linux_x86_64.tar.gz"
-      sha256 "72b5ba621e3a9250b9408325cada87f7bc6828e752c218fefcd0dd8d15f969a0"
-
-      def install
-        bin.install "kubectl-debug_pdb"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.1.1/kubectl-debug-pdb_Linux_armv6.tar.gz"
-      sha256 "80849ab8e2c6c64169e7d92e0ced16f8a561c816ad9abe7920a2016704b10096"
+      url "https://github.com/dhenkel92/kubectl-debug-pdb/releases/download/v0.1.2/kubectl-debug-pdb_Linux_armv6.tar.gz"
+      sha256 "43205c8bc119712ea74f43bebf58662f6f0e2a01fb7ec2ba74acb179a6a5520c"
 
       def install
         bin.install "kubectl-debug_pdb"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dhenkel92/kubectl-pdb/releases/download/v0.1.1/kubectl-debug-pdb_Linux_arm64.tar.gz"
-      sha256 "1438007677dd8896bbdf9f21af9a1ff1ded5417641f0f1c828317e33ef9af065"
+      url "https://github.com/dhenkel92/kubectl-debug-pdb/releases/download/v0.1.2/kubectl-debug-pdb_Linux_arm64.tar.gz"
+      sha256 "9ed7c3ae7199379bb92adc7210321d537c7b527d8ec24db5d484be326b9b3b78"
+
+      def install
+        bin.install "kubectl-debug_pdb"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/dhenkel92/kubectl-debug-pdb/releases/download/v0.1.2/kubectl-debug-pdb_Linux_x86_64.tar.gz"
+      sha256 "074730db6f031db36d25ee57ae01827b60cd6c724797126883f1a92bf93de395"
 
       def install
         bin.install "kubectl-debug_pdb"
